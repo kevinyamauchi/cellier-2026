@@ -27,7 +27,9 @@ jobs:
       - name: Test rxiv maker
         run: rxiv check-installation
       - name: Build PDF
-        run: rxiv pdf
+        run: |
+          pwd
+          rxiv pdf -o ./output
       - name: Upload PDF
         uses: actions/upload-artifact@v7
         with:
