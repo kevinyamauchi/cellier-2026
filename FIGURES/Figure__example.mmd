@@ -1,0 +1,16 @@
+---
+config:
+  look: neo
+  theme: neo
+---
+flowchart LR
+    A["<b>DATA</b><br/>Input"] --> B["<b>PROCESSING</b><br/>Analysis"]
+    B --> C["<b>RESULTS</b><br/>Output"]
+
+    classDef inputStyle fill:#1f2937,stroke:#374151,stroke-width:3px,color:#ffffff
+    classDef processStyle fill:#dc2626,stroke:#991b1b,stroke-width:3px,color:#ffffff
+    classDef outputStyle fill:#059669,stroke:#047857,stroke-width:3px,color:#ffffff
+
+    class A inputStyle
+    class B processStyle
+    class C outputStyle

@@ -1,0 +1,36 @@
+# rxiv-maker outputs
+output/
+.rxiv_cache/
+*.pdf
+*.docx
+*.zip
+*.log
+*.aux
+*.fdb_latexmk
+*.fls
+*.out
+*.toc
+*.bbl
+*.blg
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Temporary files
+tmp/
+temp/
+.tmp/
