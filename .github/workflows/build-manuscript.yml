@@ -34,4 +34,4 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: manuscript
-          path: output/manuscript.pdf
+          path: output/cellier-2026.pdf
