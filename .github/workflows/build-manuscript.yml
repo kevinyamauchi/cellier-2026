@@ -18,8 +18,12 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
+      - name: Install latex
+        run: sudo apt install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
       - name: Install Rxiv-Maker
         run: pipx install rxiv-maker
+      - name: Test rxiv maker
+        run: rxiv check-installation
       - name: Build PDF
         run: rxiv pdf
       - name: Upload PDF
