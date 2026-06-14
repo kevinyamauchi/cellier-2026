@@ -1,0 +1,37 @@
+name: Build Manuscript
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install latex
+        run: |
+          sudo apt install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
+          sudo apt install -y fonts-liberation2 fonts-noto-core texlive-fonts-extra texlive-science
+      - name: Install Rxiv-Maker
+        run: pipx install rxiv-maker
+      - name: Test rxiv maker
+        run: rxiv check-installation
+      - name: Build PDF
+        run: |
+          pwd
+          rxiv pdf -o ./output
+      - name: Upload PDF
+        uses: actions/upload-artifact@v7
+        with:
+          name: manuscript
+          path: output/cellier-2026.pdf
