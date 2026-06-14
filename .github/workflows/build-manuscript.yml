@@ -20,8 +20,7 @@ jobs:
           python-version: '3.11'
       - name: Install latex
         run: sudo apt install -y texlive-latex-recommended texlive-fonts-recommended texlive-latex-extra
-        run: sudo apt install -y fonts-liberation2 fonts-noto-core texlive-fonts-extra 
-texlive-science
+        run: sudo apt install -y fonts-liberation2 fonts-noto-core texlive-fonts-extra texlive-science
       - name: Install Rxiv-Maker
         run: pipx install rxiv-maker
       - name: Test rxiv maker
